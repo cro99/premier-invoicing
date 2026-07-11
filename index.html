@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta name="description" content="Premier Invoicing - Professional invoicing with wood grain design. Multi-business, multi-currency, offline-ready."/>
+<meta name="keywords" content="invoicing, invoice, quote, order, billing, accounting, business"/>
+<meta name="author" content="Premier Invoicing"/>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="theme-color" content="#5C3D1E"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Premier Invoicing"/>
+<meta name="msapplication-TileColor" content="#5C3D1E"/>
+<meta name="msapplication-config" content="none"/>
+<meta name="format-detection" content="telephone=no"/>
+<link rel="manifest" href="manifest.json"/>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<link rel="apple-touch-icon" href="icons/icon-192.png"/>
+<link rel="icon" type="image/png" href="icons/icon-72.png"/>
+<title>Premier Invoicing</title>
+<script src="https://s4.zstatic.net/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js"></script>
+</head>
+<body role="application" aria-label="Premier Invoicing">
+<!-- ARIA live region for screen reader announcements -->
+<div id="aria-live" aria-live="polite" aria-atomic="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"></div>
+<div id="app">
+  <div class="lock-screen" id="lockScreen" style="display:none" role="dialog" aria-modal="true" aria-labelledby="lockBizName">
+    <div class="lock-card" id="lockCard">
+      <div class="lock-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
+      <h2 id="lockBizName">Premier Invoicing</h2>
+      <div class="lock-sub" id="lockSub">Enter your credentials to unlock</div>
+      <div class="lock-method-tabs" id="lockTabs" role="tablist">
+        <div class="lock-tab active" role="tab" aria-selected="true" tabindex="0" onclick="switchLockMethod('pin')" onkeydown="if(event.key==='Enter')switchLockMethod('pin')" data-method="pin"><i class="fas fa-hashtag" aria-hidden="true"></i> PIN</div>
+        <div class="lock-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchLockMethod('password')" onkeydown="if(event.key==='Enter')switchLockMethod('password')" data-method="password"><i class="fas fa-key" aria-hidden="true"></i> Password</div>
+        <div class="lock-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchLockMethod('biometric')" onkeydown="if(event.key==='Enter')switchLockMethod('biometric')" data-method="biometric" id="bioTab" style="display:none"><i class="fas fa-fingerprint" aria-hidden="true"></i> Biometric</div>
+      </div>
+      <div id="lockForm"></div>
+      <button class="btn btn-primary" id="lockBtn" onclick="doUnlock()" style="margin-top:8px;width:100%">Unlock</button>
+    </div>
+  </div>
+  <div class="main-container">
+    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation"></nav>
+    <main class="content" role="main" aria-label="Content Area">
+      <div class="toolbar" id="toolbar" role="toolbar" aria-label="Quick Actions"></div>
+      <div class="content-body" id="body"></div>
+    </main>
+  </div>
+  <footer class="statusbar" id="statusBar" role="contentinfo">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span id="stUser"></span>
+      <span class="statusbar-spacer"></span>
+      <span id="stDate"></span>
+    </div>
+  </footer>
+</div>
+<div class="toast-container" id="toasts" role="region" aria-label="Notifications"></div>
+<div id="modalBox" role="presentation"></div>
+<div id="ctxMenu" class="ctx-menu hidden" role="menu" aria-label="Context Menu"></div>
+</body>
+</html>
