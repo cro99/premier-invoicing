@@ -1,0 +1,17 @@
+{
+  "name": "Premier Invoicing",
+  "short_name": "PremierInv",
+  "description": "Professional invoicing with wood grain design. Multi-business, multi-currency, offline-ready.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2C1810",
+  "theme_color": "#5C3D1E",
+  "orientation": "any",
+  "scope": "/",
+  "icons": [
+    { "src": "icons/icon-72.png", "sizes": "72x72", "type": "image/png" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "categories": ["business", "finance", "productivity"]
+}
